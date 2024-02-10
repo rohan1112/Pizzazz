@@ -4,7 +4,8 @@ import Button from '../../ui/Button';
 import CartItem from './CartItem';
 import EmptyCart from './EmptyCart';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearCart, getCart } from './cartSlice';
+import { clearCart, getCart, getTotalPrice } from './cartSlice';
+import { formatCurrency } from '../../utils/helpers';
 
 // const fakeCart = [
 //   {
@@ -33,6 +34,7 @@ import { clearCart, getCart } from './cartSlice';
 function Cart() {
   // const cart = fakeCart;
   const userName = useSelector((state) => state.user.userName);
+  const totalPrice = useSelector(getTotalPrice);
   const cart = useSelector(getCart);
   const dispatch = useDispatch();
 
@@ -51,6 +53,11 @@ function Cart() {
           <CartItem item={item} key={item.pizzaId} />
         ))}
       </ul>
+      <div className="mt-2  flex justify-end">
+        <p className="mt-3 text-base font-extrabold">
+          To Pay :{formatCurrency(totalPrice)}
+        </p>
+      </div>
 
       <div className="mt-6 space-x-2">
         <Button to="/order/new" type="primary">

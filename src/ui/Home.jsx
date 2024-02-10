@@ -17,7 +17,7 @@ function Home() {
         <CreateUser />
       ) : (
         <Button to="/menu" type="primary">
-          Order Now
+          Continue Ordering,{userName}
         </Button>
       )}
     </div>
