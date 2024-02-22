@@ -1,4 +1,4 @@
-# Pizzazz
+# Pizzazz (https://rohan-pizzazz.netlify.app/)
 
 Welcome to Pizzazz! This project is a frontend application aimed at providing users with an enhanced browsing experience, coupled with an eye-catching design. Pizzazz is built using React Router and Redux to ensure smooth navigation and efficient state management.
 
